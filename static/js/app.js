@@ -33,7 +33,7 @@ function updateFilters() {
     let changedElement = d3.select("this");
 
     // 4b. Save the value that was changed as a variable.
-    let elementValue = changedElement.property("value");
+    let elementValue = changedElement.property("string");
     console.log(elementValue);
 
     // 4c. Save the id of the filter that was changed as a variable.
@@ -72,7 +72,7 @@ function filterTable() {
     else if (country) {
         filteredData = filteredData.filter(row => row.string === country);
       }  
-     else (shape) {
+    else if (shape) {
         filteredData = filteredData.filter(row => row.string === shape);
       } 
       // 10. Finally, rebuild the table using the filtered data
