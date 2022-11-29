@@ -30,10 +30,10 @@ var filters = {};
 function updateFilters() {
    
     // 4a. Save the element that was changed as a variable. (create a variable that saves the element that was changed using d3.select(this).)
-    let changedElement = d3.select("this");
+    let changedElement = d3.select(this);
 
     // 4b. Save the value that was changed as a variable.
-    let elementValue = changedElement.property("string");
+    let elementValue = changedElement.property("value");
     console.log(elementValue);
 
     // 4c. Save the id of the filter that was changed as a variable.
@@ -48,11 +48,11 @@ function updateFilters() {
     else {
       delete filters[filterId];
     }
-    // 6. Call function to apply all filters and rebuild the table
+    ///6. Call function to apply all filters and rebuild the table
   filterTable();    
   } 
   
-  // 7. Use this function to filter the table when data is entered.
+  /// 7. Use this function to filter the table when data is entered.
 function filterTable() {
   
     // 8. Set the filtered data to the tableData.
@@ -60,21 +60,17 @@ function filterTable() {
    
     // 9. Loop through all of the filters and keep any data that
     // matches the filter values
-    if (date) {
-        filteredData = filteredData.filter(row => row.datetime === date);
-      }  
-    else if (city) {
-        filteredData = filteredData.filter(row => row.string === city);
-      }  
-    else if (state) {
-        filteredData = filteredData.filter(row => row.string === state);
-      }  
-    else if (country) {
-        filteredData = filteredData.filter(row => row.string === country);
-      }  
-    else if (shape) {
-        filteredData = filteredData.filter(row => row.string === shape);
-      } 
+    Object.entries(filters).forEach(([key, value]) => {
+         filteredData = filteredData.filter(row => row[key] === value);
+         });
+
+         //12.5.2
+//1. let changedElement = d3.select("this");  <------------- change to this let changedElement = d3.select(this); so remove quotes. if you already did it great
+//2. With the object.entries code focus on filters.
+//3. then in the ForEach() in the parantheses focus on key and values. Make sure they are in brackets
+//4. then in the curly brackets call your filteredData and make it equal to your code that will filter the data
+
+
       // 10. Finally, rebuild the table using the filtered data
     buildTable(filteredData);  
   }
