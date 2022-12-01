@@ -64,12 +64,11 @@ function filterTable() {
          filteredData = filteredData.filter(row => row[key] === value);
          });
 
-         //12.5.2
-//1. let changedElement = d3.select("this");  <------------- change to this let changedElement = d3.select(this); so remove quotes. if you already did it great
+//Note:
+//1. let changedElement = d3.select("this");  <------------- change to this let changedElement = d3.select(this); so remove quotes. 
 //2. With the object.entries code focus on filters.
 //3. then in the ForEach() in the parantheses focus on key and values. Make sure they are in brackets
 //4. then in the curly brackets call your filteredData and make it equal to your code that will filter the data
-
 
       // 10. Finally, rebuild the table using the filtered data
     buildTable(filteredData);  
@@ -78,5 +77,7 @@ function filterTable() {
   // 2. Attach an event to listen for changes to each filter
   d3.selectAll("input").on("change", updateFilters); 
   
+// Note: updateFilters() function replaces handleClick() function because there is no more "Filter Table" botton
+
   // Build the table when the page loads
   buildTable(tableData);
