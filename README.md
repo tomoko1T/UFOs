@@ -17,7 +17,7 @@ The new version of webpage allows the users to filter the data based on the crit
 The drawback of the webpage is there is not keyword search.  The user may have only information which is not related to the provided fields.
 Two recommendations for further development are follows:
 
-- To add a keyword saerch field. 
+- To add a keyword search field. 
 
 - To add a link to lead a corresponding articles for the sighting the user selects.  In this way, the webpage can provide them with more information and could intrigue the users.     
 
