@@ -4,7 +4,7 @@
 
 The purpose of this analysis is to create a webpage of UFO sightings.  The users can find the UFO sightings based on the certain criteria they enter.  The process is to create a table to organize UFO data using JavaScript, and it reacts to user input by filtering the data.  The HTML file with Bootstrap acts as a window to show their selection.  The last stage of the analysis is to add a filter function so that the users can find the sightings by not only entering date but also entering other criterias such as city, state and country, and so on.   
 
-UFO sighting web is file:///C:/Users/tomok/Documents/RICE_AnalysisProject/UFOs/index.html
+UFO sighting deployed website is (https://tomoko1t.github.io/UFOs/)
 
 ## Results: 
 
